@@ -1,0 +1,47 @@
+/*
+ * Open Hospital Management Information System
+ * Dr M H B Ariyaratne
+ * buddhika.ari@gmail.com
+ */
+package com.kajabuyahmis.ws.common;
+
+import java.util.Set;
+import javax.ws.rs.core.Application;
+
+/**
+ *
+ * @author Archmage-Dushan
+ */
+@javax.ws.rs.ApplicationPath("api")
+public class ApplicationConfig extends Application {
+
+    @Override
+    public Set<Class<?>> getClasses() {
+        Set<Class<?>> resources = new java.util.HashSet<>();
+        // following code can be used to customize Jersey 1.x JSON provider:
+        try {
+            Class jacksonProvider = Class.forName("org.codehaus.jackson.jaxrs.JacksonJsonProvider");
+            resources.add(jacksonProvider);
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        addRestResourceClasses(resources);
+        return resources;
+    }
+
+    /**
+     * Do not modify addRestResourceClasses() method.
+     * It is automatically populated with
+     * all resources defined in the project.
+     * If required, comment out calling this method in getClasses().
+     */
+    private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(com.kajabuyahmis.ws.channel.Api.class);
+        resources.add(com.kajabuyahmis.ws.common.ApiMembership.class);
+        resources.add(com.kajabuyahmis.ws.finance.Finance.class);
+        resources.add(com.kajabuyahmis.ws.finance.Qb.class);
+        resources.add(com.kajabuyahmis.ws.inward.ApiInward.class);
+        resources.add(com.kajabuyahmis.ws.lims.Lims.class);
+    }
+    
+}
