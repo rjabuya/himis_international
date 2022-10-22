@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kajabuyahmis</groupId>
-    <artifactId>kajabuyahosi2022</artifactId>
+    <artifactId>himis_international</artifactId>
     <version>3.0.0</version>
     <packaging>war</packaging>
 
-    <name>kajabuyahosi2022</name>
+    <name>himis_international</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
